@@ -1,0 +1,15 @@
+{
+    "ultimo_aggiornamento": "19/02/2026 13:20",
+    "annunci": [
+        {
+            "titolo": "Bilocale centro Cremona",
+            "prezzo": "120.000 \u20ac",
+            "link": "https://example.com/1"
+        },
+        {
+            "titolo": "Trilocale zona Po",
+            "prezzo": "185.000 \u20ac",
+            "link": "https://example.com/2"
+        }
+    ]
+}
