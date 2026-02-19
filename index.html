@@ -1,1 +1,41 @@
-<h1>Monitor Immobiliare Cremona Deste - Test </h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Annunci Vendita Case - Cremona</title>
+</head>
+<body>
+
+<h1>Annunci vendita - Cremona</h1>
+<p id="aggiornamento"></p>
+<div id="lista-annunci"></div>
+
+<script>
+fetch("annunci.json")
+    .then(response => response.json())
+    .then(data => {
+
+        document.getElementById("aggiornamento").innerText =
+            "Ultimo aggiornamento: " + data.ultimo_aggiornamento;
+
+        let container = document.getElementById("lista-annunci");
+
+        data.annunci.forEach(annuncio => {
+            let div = document.createElement("div");
+            div.innerHTML = `
+                <h3>${annuncio.titolo}</h3>
+                <p>Prezzo: ${annuncio.prezzo}</p>
+                <a href="${annuncio.link}" target="_blank">Vedi annuncio</a>
+                <hr>
+            `;
+            container.appendChild(div);
+        });
+
+    })
+    .catch(error => {
+        document.getElementById("lista-annunci").innerText =
+            "Errore nel caricamento degli annunci.";
+    });
+</script>
+
+</body>
+</html></h1>
